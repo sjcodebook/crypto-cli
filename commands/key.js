@@ -31,11 +31,20 @@ const key = {
 
       return key
     } catch (error) {
-        console.log(error)
+        console.log(error.message.red)
     }
   },
   remove() {
-    console.log('hello')
+    try {
+      const keyManager = new KeyManager()
+      const key = keyManager.deleteKey()
+
+      console.log('Removed API Key'.blue)
+
+      return
+    } catch (error) {
+        console.log(error.message.red)
+    }
   }
 }
 
